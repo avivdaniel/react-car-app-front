@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 import tw from "twin.macro";
-import { Slide as Menu } from "react-burger-menu";
+import { slide as Menu } from "react-burger-menu";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../responsive";
+import menuStyles from "./menuStyles";
 
 const ListContainer = styled.ul`
   ${tw`
@@ -13,7 +14,7 @@ const ListContainer = styled.ul`
   `}
 `;
 
-const NavItem = styled.li`
+const NavItem = styled.li<{ menu?: any }>`
   ${tw`
     text-xs
     md:text-base
@@ -24,6 +25,11 @@ const NavItem = styled.li`
     ease-in-out
     hover:text-gray-700
   `}
+  ${({ menu }) =>
+    menu &&
+    css`
+      ${tw`text-white focus:text-white text-xl mb-4`}
+    `}
 `;
 
 const NavItems = () => {
@@ -31,22 +37,28 @@ const NavItems = () => {
 
   const links = (
     <>
-      <NavItem>
+      <NavItem menu={isMobile}>
         <a href="#">Home</a>
       </NavItem>
-      <NavItem>
+      <NavItem menu={isMobile}>
         <a href="#">Cars</a>
       </NavItem>
-      <NavItem>
+      <NavItem menu={isMobile}>
         <a href="#">Services</a>
       </NavItem>
-      <NavItem>
+      <NavItem menu={isMobile}>
         <a href="#">Contact Us</a>
       </NavItem>
     </>
   );
 
-  const navItems = isMobile ? <Menu>{links}</Menu> : links;
+  const navItems = isMobile ? (
+    <Menu right styles={menuStyles}>
+      {links}
+    </Menu>
+  ) : (
+    links
+  );
 
   return <ListContainer>{navItems}</ListContainer>;
 };
