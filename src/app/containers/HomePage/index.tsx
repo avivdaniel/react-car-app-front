@@ -4,6 +4,9 @@ import tw from "twin.macro";
 import Navbar from "../../components/navbar";
 import TopSection from "./topSection";
 import BookCard from "../../components/bookCard";
+import BookingSteps from "./bookingSteps";
+import AboutUs from "./aboutUs";
+import TopCars from "./topCars";
 
 const PageContainer = styled.div`
   ${tw`
@@ -22,6 +25,9 @@ const HomePage = () => {
       <Navbar />
       <TopSection />
       <BookCard />
+      <BookingSteps />
+      <AboutUs />
+      <TopCars />
     </PageContainer>
   );
 };
