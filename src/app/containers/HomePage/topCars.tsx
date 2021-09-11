@@ -8,7 +8,7 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../responsive";
 
-const TopCarsContainer = styled.div`
+const TopCarsContainer = styled.section`
   ${tw`
       max-w-screen-xl
       w-full

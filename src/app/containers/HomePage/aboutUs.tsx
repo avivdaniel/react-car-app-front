@@ -5,25 +5,24 @@ import { SCREENS } from "../../responsive";
 
 import JeepImg from "../../../assets/images/jeep.png";
 
-const AboutUsContainer = styled.div`
+const AboutUsContainer = styled.section`
   ${tw`
+    bg-gray-100
     w-full
-    flex
-    flex-wrap
+    lg:flex
+    lg:flex-wrap
     items-center
     justify-center
-    py-4
+    py-14
     px-7
     mb-8
     md:px-0
-    bg-white
   `}
 `;
 
 const CarContainer = styled.div`
   width: auto;
   height: 15em;
-  margin-left: -30px;
 
   img {
     width: auto;
@@ -31,14 +30,14 @@ const CarContainer = styled.div`
   }
 
   @media (min-width: ${SCREENS.md}) {
-    height: 28em;
+    height: 20em;
   }
   @media (min-width: ${SCREENS.lg}) {
-    height: 30em;
+    height: 23em;
   }
   @media (min-width: ${SCREENS["2xl"]}) {
-    height: 35em;
-    margin-left: 0;
+    height: 43em;
+    margin-left: -10em;
   }
 `;
 
@@ -48,7 +47,16 @@ const InfoContainer = styled.div`
     flex
     flex-col
     md:ml-6
-    2xl:ml-16
+    md:px-10
+  
+  `}
+`;
+
+const SectionTitle = styled.h2`
+  ${tw`
+    font-bold
+    text-red-500
+    my-4
   `}
 `;
 
@@ -79,6 +87,7 @@ const AboutUs = () => {
         <img src={JeepImg} alt="Jeep Car" />
       </CarContainer>
       <InfoContainer>
+        <SectionTitle>About Us</SectionTitle>
         <Title>Fell The Best Experience With Out Rental Deals</Title>
         <InfoText>
           What about scaling components to a global audience? this is

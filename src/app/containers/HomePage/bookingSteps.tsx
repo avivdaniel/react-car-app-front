@@ -7,8 +7,10 @@ import {
   faCarSide,
   faMapMarkedAlt,
 } from "@fortawesome/free-solid-svg-icons";
-
-const Container = styled.div`
+import { SCREENS } from "../../responsive";
+import DotedCircle from "../../../assets/images/circle.png";
+import car from "../../../assets/images/jeep.png";
+const Container = styled.section`
   ${tw`
     w-full
     flex
@@ -21,21 +23,44 @@ const Container = styled.div`
 `;
 
 const StepsContainer = styled.div`
+  max-width: 1200px;
   ${tw`
     flex
-    justify-evenly
     flex-wrap
+    justify-center
     mt-7
     lg:mt-16
+    lg:mx-auto
   `}
 `;
 
 const StepContainer = styled.div`
+  @media (min-width: ${SCREENS.lg}) {
+    flex: 1;
+    max-width: 400px;
+    &:first-child {
+      max-width: 250px;
+    }
+    &:not(:first-child) {
+      padding-left: 150px;
+      &:after {
+        position: absolute;
+        background-image: url(${DotedCircle});
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: "";
+        left: 0;
+        height: 100%;
+        width: 150px;
+      }
+    }
+  }
+  //md:w-96
+
   ${tw`
+    relative
     flex
     flex-col
-    w-full
-    md:w-96
     my-4
     lg:m-0
     items-center

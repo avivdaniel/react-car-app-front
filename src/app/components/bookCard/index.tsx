@@ -9,10 +9,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Calendar from "react-calendar";
 import Button from "../button";
-
-import "react-calendar/dist/Calendar.css";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../responsive";
+
+import "react-calendar/dist/Calendar.css";
 
 const CardContainer = styled.div`
   min-height: 4.3em;
